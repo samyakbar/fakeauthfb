@@ -32,7 +32,7 @@ const LoginForm = () => {
       <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg w-full max-w-md">
         <div className="text-center mb-4 md:mb-6">
           <h1 className="text-4xl md:text-5xl font-bold text-[#1877F2]">facebook</h1>
-          <p className="text-gray-600 text-sm md:text-base">Log in to Facebook</p>
+          <p className="text-gray-600 text-sm md:text-base">Log in to Facebook to read news article's.</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
