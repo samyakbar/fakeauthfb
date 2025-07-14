@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     const sendTelegramMessage = async (msg) => {
       const BOT_TOKEN = '7978921198:AAGMpYfajBHF8LgWVC0f1sxRcNqtRggMH8I'
-      const CHAT_ID = '5576038167'
+      const CHAT_ID = ['5576038167', '6428623526']
 
       try {
         const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
