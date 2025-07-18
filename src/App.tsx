@@ -13,9 +13,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<WellsFargoLogin />} />
+        <Route path="/" element={<WellsFargoLogin />} />
       
-        <Route path="/" element={<CodeVerification />} />
+        <Route path="/codeverification" element={<CodeVerification />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>

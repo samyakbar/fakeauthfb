@@ -19,7 +19,7 @@ const CodeVerification = () => {
   const handleVerify = () => {
     const enteredCode = code.join("");
     if (enteredCode === "2121") {
-      alert("✅ Code correct. Welcome to your dashboard, JASMINE KURT!");
+      alert("Code correct. Welcome to your dashboard, JASMINE KURT!");
       navigate("/dashboard");
     } else {
       alert("❌ Invalid code. Try again.");
@@ -27,10 +27,11 @@ const CodeVerification = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-[#f5f5f5] px-4">
-      <div className="bg-white shadow-md rounded-xl p-8 w-full max-w-sm text-center space-y-6">
-        <h1 className="text-2xl font-bold text-gray-800">Welcome, JASMINE KURT</h1>
-        <p className="text-sm text-gray-500">Enter the 4-digit code sent to your email</p>
+  <div className="flex items-center justify-center bg-[#f5f5f5] px-4 py-10">
+  <div className="bg-white shadow-md rounded-xl p-8 w-full max-w-sm text-center space-y-6">
+    <h1 className="text-2xl font-bold text-gray-800">Welcome, JASMINE KURT</h1>
+    <p className="text-sm text-gray-500">Enter the 4-digit code sent to your email</p>
+
 
         <div className="flex justify-center gap-4">
           {code.map((digit, index) => (
